@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 import { IconoK } from "../../../assets/img/ImagesExport"
+import { Logout } from "../components/Logout"
 
 
+// eslint-disable-next-line react/prop-types
 export const Navbar = ({ isExpanded, toggleSidebar }) => {
 
 
@@ -23,24 +25,24 @@ export const Navbar = ({ isExpanded, toggleSidebar }) => {
                 </li>
                 <li className="sidebar-item">
                     <a href="#" className="sidebar-link"><i className="fa-regular fa-calendar-check"></i>
-                        <span>Tareas</span>
+                        <span>Album</span>
                     </a>
                 </li>
                 <li className="sidebar-item">
                     <a href="#" className="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
                         <i className="fa-solid fa-shield-halved"></i>
-                        <span>Auth</span>
+                        <span>Sesión</span>
                     </a>
                     <ul id="auth" className="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li className="sidebar-item">
-                            <Link to="/login" className="sidebar-link">Login</Link>
+                            <Link to="/login" className="sidebar-link">Iniciar Sesión</Link>
                         </li>
                         <li className="sidebar-item">
-                            <Link to="/registro" className="sidebar-link">Register</Link>
+                            <Link to="/registro" className="sidebar-link">Registrar usuario</Link>
                         </li>
                     </ul>
                 </li>
-                <li className="sidebar-item">
+                {/* <li className="sidebar-item">
                     <a href="#" className="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
                         <i className="lni lni-layout"></i>
                         <span>Multi Level</span>
@@ -60,7 +62,7 @@ export const Navbar = ({ isExpanded, toggleSidebar }) => {
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> */}
                 <li className="sidebar-item">
                     <a href="#" className="sidebar-link"><i className="fa-regular fa-bell"></i>
                         <span>Notificacion</span>
@@ -73,10 +75,7 @@ export const Navbar = ({ isExpanded, toggleSidebar }) => {
                 </li>
             </ul>
             <div className="sidebar-footer">
-                <a href="#" className="sidebar-link">
-                    <i className="fa-solid fa-right-from-bracket"></i>
-                    <span>Logout</span>
-                </a>
+                <Logout />
             </div>
         </aside>
     )

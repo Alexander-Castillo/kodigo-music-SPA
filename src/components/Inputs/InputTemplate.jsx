@@ -3,8 +3,13 @@ import PropTypes from 'prop-types'
 import '../../assets/css/inputPass.css'
 
 
+// eslint-disable-next-line react/prop-types
 export const InputTemplate = ({label, type= 'text', name, placeholder, register, errors, trigger, validatePass}) =>{
+
+    //MANEJO DE ESTADO PARA MOSTRAR LA CONTRASEÑA INGRESADA
     const [showPass, setShowPass] = useState(false);
+
+
     return (
         <div data-mdb-input-init className="form-outline form-white mb-4">
             <label htmlFor={name} className="form-label text-start">{label}</label>
